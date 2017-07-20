@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>当前输入框高亮显示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            color: #4f4f4f;
+            font: 14px/1.5 \5fae\8f6f\96c5\9ed1;
+        }
+        
+        form {
+            width: 400px;
+            border: 2px solid #f60;
+            background: #fef4eb;
+            margin: 20px auto;
+            padding-bottom: 10px;
+        }
+        
+        form h2 {
+            color: #fe791e;
+            font-size: 16px;
+            padding: 8px;
+            border-bottom: 2px solid #f60;
+            background: #ffebd7;
+        }
+        
+        form p {
+            float: left;
+            clear: both;
+            width: 100%;
+            height: 31px;
+            margin-top: 10px;
+            line-height: 31px;
+        }
+        
+        form label {
+            width: 100px;
+            height: 31px;
+            text-align: right;
+            float: left;
+        }
+        
+        form input {
+            float: left;
+            border: 0;
+            font-family: \5fae\8f6f\96c5\9ed1;
+            background: url(input.png) no-repeat;
+        }
+        
+        form .f-text,
+        form .f-text-high {
+            width: 203px;
+            height: 31px;
+            padding-left: 5px;
+            line-height: 31px;
+        }
+        
+        form .f-text-high {
+           
+              background-position: 0 -31px;
+        }
+        
+        form:after {
+            content: ".";
+            clear: both;
+            display: block;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+        
+        form .f-btn {
+            width: 104px;
+            height: 31px;
+            background: #f60;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            line-height: 31px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length-1; i++) {
+                inputs[i].onfocus = function () {
+                    this.className = "f-text-high"
+                }
+                inputs[i].onblur = function () {
+                    this.className = "f-text"
+                }
+            }
+        }
+
+   
+    </script>
+</head>
+
+<body>
+    <form>
+        <h2>用户登陆</h2>
+        <p>
+            <label>用户名：</label>
+            <input class="f-text" type="text" />
+        </p>
+        <p>
+            <label>密码：</label>
+            <input class="f-text" type="password" />
+        </p>
+        <p>
+            <label></label>
+            <input class="f-btn" type="button" value="登 录" />
+        </p>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>(练习)Div闪烁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: red;
+            color: white;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            letter-spacing: 5px;
+            text-align: center;
+            font: 12px/200px Arial;
+            margin: -100px 0 0 -100px;
+        }
+    </style>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script> 
+<script>
+        window.onload = function () {
+            var box = document.getElementsByTagName("div")[0];
+            timer = null;
+            box.onclick = function () {
+                var i = 0;
+                clearInterval(timer);
+                timer = setInterval(function () { 
+                    box.style.display = i++ % 2 ? "none" : "block";
+                    i>6 &&(clearInterval(timers))
+                    }, 80)
+            }
+        }
+
+    //    $(document).ready(function () {
+    //         $("div:first").click=function(){
+    //               $("div:first").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    //         }
+    //    })
+
+    window.onload=function(){
+        var box=document.getElementsByTagName("div")[0];
+        var timer=null;
+        box.onclick=function(){
+            var i=0;
+            clearInterval(timer);
+            timer=setInterval(function(){
+                box.style.display=i++%2 ? "none" :"block";
+                i>6 &&(clearInterval(timer));
+            },80)
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div>点击我我就闪烁</div>
+</body>
+
+</html>
+ 

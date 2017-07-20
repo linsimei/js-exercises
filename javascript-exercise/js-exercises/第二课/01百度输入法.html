@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>百度输入法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #outer {
+            width: 70px;
+            margin: 10px auto;
+            font-size: 12px;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        
+        #ime {
+            list-style: none;
+            border: 1px solid blue;
+            margin-top: 5px;
+            background: #fff; 
+           display:none;
+        }
+        
+        #ime li {
+            width: 100%;
+            line-height: 25px;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+        }
+        
+        #close {
+            border-top: 1px solid #9a99ff;
+        }
+        
+        #ime li a {
+            color: #00c;
+            padding: 0 5px;
+            text-decoration: none;
+        }
+        
+        #ime li a:hover {
+            background: #d9e1f6;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("outer").getElementsByTagName("button")[0];
+            var lists = document.getElementById("ime");
+            var oLi = document.getElementsByTagName("li");
+            var close = document.getElementById("close");
+            btn.onclick = function () {
+                lists.style.display = lists.style.display == "block" ? "none" : "block"
+            };
+            close.onclick = function () {
+                lists.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <button>输入法</button>
+        <ul id="ime">
+            <li><a>手写</a></li>
+            <li><a>拼音</a></li>
+            <li id="close"><a>关闭</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

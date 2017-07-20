@@ -1,0 +1,91 @@
+﻿<!DOC html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> (练习)函数传参，改变Div任意属性的值</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+      #outer {
+          width: 300px;
+          margin:0 auto;
+      }
+      input {
+          border: 1px solid black;
+          width: 150px;
+           margin: 8px;
+         
+      }
+       button {
+        margin-right: 5px;
+           cursor: pointer;
+    }
+        label {
+        width: 5em;
+        display: inline-block;
+        text-align: right;
+    }
+        #div1 {
+            font-size:12px;
+            width: 180px;
+            height: 180px;
+            margin: 10px auto;
+            background: black;
+            color: #fff
+                 
+        }
+    </style>
+    <script>
+      /*  var changeStyle=function(elem, name, value) {
+            elem.style[name]= value;
+        }
+        window.onload= function(){
+            var input = document.getElementsByTagName("input");
+            var btn = document.getElementsByTagName("button");
+            var oDiv = document.getElementById("div1");
+            btn[0].onclick = function() {
+                changeStyle(oDiv, input[0].value, input[1].value);
+            }
+           btn[1].onclick= function() {
+                    oDiv.removeAttribute("style");
+           }
+            
+        }*/
+        var changeStyle=function(elem,name,value) {
+            elem.style[name] = value;
+        }
+        window.onload= function() {
+            var input = document.getElementsByTagName("input");
+            var btn = document.getElementsByTagName("button");
+            var oDiv = document.getElementById("div1");
+            btn[0].onclick = function () {
+                changeStyle(oDiv, input[0].value, input[1].value);
+            }
+            btn[1].onclick = function() {
+                oDiv.removeAttribute("style");
+                }
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p>
+            <label>属性名:</label>
+            <input value="background" />
+        </p><p>
+            <label>属性值:</label>
+            <input value="blue" />
+        </p>
+        <p>
+            <label></label>
+            <button>确定</button>
+            <button>重置</button>
+        </p>
+    </div>
+<div id="div1">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+</body>
+</html>

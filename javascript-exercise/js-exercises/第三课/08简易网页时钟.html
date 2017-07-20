@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>简易网页时钟 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #fff;
+            font: 16px/1.5 \5fae\8f6f\96c5\9ed1;
+        }
+
+        #clock {
+            width: 300px;
+            background: #000;
+            margin: 10px auto;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        span {
+            width: 80px;
+            line-height: 2px;
+            border: 2px solid #ccc;
+            background: #fbfbfb;
+            margin: 0 10px;
+            padding: 0 10px;
+            color: black;
+        }
+    </style>
+    <script>
+        /* window.onload = function () {
+            var oSpan = document.getElementsByTagName("span");
+            setInterval(getTimes, 1000);
+            getTimes();
+            function getTimes() {
+                var time = new Date();
+                var myTime = [time.getHours(), time.getMinutes(), time.getSeconds()];
+                for (var i = 0; i < myTime.length; i++) {
+                    oSpan[i].innerHTML = format(myTime[i]);
+
+                }
+
+                function format(a) {
+                    return a.toString().replace(/^(\d)$/, "0$1");
+                }
+
+            }
+
+
+        }
+
+        window.onload = function () {
+              var oClock = document.getElementById("clock");
+              var aSpan = oClock.getElementsByTagName("span");
+
+              setInterval(getTimes, 1000);
+              getTimes();
+
+              function getTimes() {
+                  var oDate = new Date();
+                  var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+                  for (var i in aDate) {
+                      aSpan[i].innerHTML = format(aDate[i]);
+                  }
+
+              }
+
+              function format(a) {
+                  return a.toString().replace(/^(\d)$/, "0$1")
+              }
+          }*/
+
+        /* window.onload= function() {
+             var oSpan = document.getElementsByTagName("span");
+             setInterval(getTime, 1000);
+             getTime();
+
+             function getTime() {
+                 var time = new Date;
+                 var myTime = [time.getHours(), time.getMinutes(), time.getSeconds()];
+                 for(var i in myTime)
+                 oSpan[i].innerHTML = format(myTime[i])
+             }
+         }*/
+
+        window.onload = function () {
+
+            setInterval(time, 1000);
+            time();
+
+            function time() {
+                var oSpan = document.getElementsByTagName("span");
+                var time = new Date;
+                var myTime = [time.getHours(), time.getMinutes(), time.getSeconds()];
+                for (var i in myTime)
+                    oSpan[i].innerHTML = format(myTime[i]);
+
+
+            }
+        }
+        function format(a) {
+            return a.toString().replace(/^(\d)$/, "0$1");
+        }
+    </script>s
+</head>
+<body>
+    <div id="clock">
+        <span></span>点<span></span>分<span></span>秒
+    </div>
+</body>
+</html>

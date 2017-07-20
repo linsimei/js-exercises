@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>(练习)简易年历 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 250px;
+            margin: 10px auto;
+            background: #eaeaea;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .main {
+            overflow: hidden;
+            zoom: 1;
+            list-style: none;
+            margin: 5px auto;
+            padding: 5px;
+        }
+
+            .main li {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+                background: black;
+                float: left;
+                text-align: center;
+                cursor: pointer;
+                line-height: 1.3;
+            }
+
+                .main li.current {
+                    color: red;
+                    background: white;
+                }
+
+        .content {
+            width: 220px;
+            color: #666;
+            background: #f1f1f1;
+            border: 1px solid #fff;
+            margin: 10px auto;
+            padding: 5px;
+        }
+
+            .content li {
+                padding: 5px;
+                list-style: none;
+                display: none;
+            }
+    </style>
+    <script>
+        window.onload = function () {
+            var lia = document.getElementsByClassName("main")[0].getElementsByTagName("li");
+            var lib = document.getElementsByClassName("content")[0].getElementsByTagName("li");
+            for (var i = 0; i < lia.length; i++) {
+                lia[i].index = i;
+                lia[i].onmouseover = function () {
+                    for (var n = 0; n < lia.length; n++)
+                        lia[n].className = "";
+                    this.className = "current";
+                    for (var n = 0; n < lib.length; n++)
+                        lib[n].style.display = "none";
+                    lib[this.index].style.display = "block";
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <ul class="main">
+            <li><strong>1</strong><br />JAN</li>
+            <li><strong>2</strong><br />FER</li>
+            <li><strong>3</strong><br />MAR</li>
+            <li><strong>4</strong><br />APR</li>
+            <li><strong>5</strong><br />MAY</li>
+            <li><strong>6</strong><br />JUN</li>
+            <li><strong>7</strong><br />JUL</li>
+            <li><strong>8</strong><br />AUG</li>
+            <li><strong>9</strong><br />SEP</li>
+            <li><strong>10</strong><br />OCT</li>
+            <li><strong>11</strong><br />NOV</li>
+            <li><strong>12</strong><br />DEC</li>
+        </ul>
+        <ul class="content">
+            <li><strong>1月节日</strong><br />元旦：1月1日至3日放假三天。</li>
+            <li><strong>2月节日</strong><br />春节：2月2日至8日放假7天。</li>
+            <li><strong>3月节日</strong><br />妇女节：3月8日妇女节，与我无关。</li>
+            <li><strong>4月节日</strong><br />清明节：4月3日至5日放假3天</li>
+            <li><strong>5月节日</strong><br />劳动节：4月30日至5月2日放假3天。</li>
+            <li><strong>6月节日</strong><br />端午节：6月4日至6日放假3天。</li>
+            <li><strong>7月节日</strong><br />小暑：7月7日小暑。不放假。</li>
+            <li><strong>8月节日</strong><br />七夕节：8月6日七夕节。不放假。</li>
+            <li><strong>9月节日</strong><br />中秋节：9月10日至12日放假3天。</li>
+            <li><strong>10月节日</strong><br />国庆节：10月1日至7日放假7天。</li>
+            <li><strong>11月节日</strong><br />立冬：11月8日立冬。不放假。</li>
+            <li><strong>12月节日</strong><br />艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。</li>
+        </ul>
+    </div>
+</body>
+</html>

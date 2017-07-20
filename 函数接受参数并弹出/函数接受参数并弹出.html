@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>函数接受参数并弹出</title>
+    <style>
+        div,
+        input {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 12px/1.5 Arial;
+        }
+
+        .container {
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var getArg = function (a, b) {
+                alert(a.value);
+                alert(b.value)
+            }
+            var inputs = document.getElementsByTagName("input");
+            inputs[2].onclick = function () {
+                getArg(inputs[0], inputs[1]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" value="广东省" />
+        <input type="text" value="深圳市" />
+        <input type="button" value="传参" />
+
+    </div>
+</body>
+
+
+</html>

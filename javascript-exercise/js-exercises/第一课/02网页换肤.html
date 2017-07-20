@@ -1,0 +1,146 @@
+﻿<!doctpye html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>给网页换肤</title>
+    <link href="red.css" rel="stylesheet" type="text/css"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 800px;
+        }
+
+        #outer {
+            width: 800px;
+        }
+
+        #wrap1 {
+            width: 100%;
+            display: block;
+            zoom: 1;
+        }
+        #wrap1 li {
+            width: 6px;
+            height: 6px;
+            list-style: none;
+            display: block;
+            float: left;
+            text-indent: -9999px;
+            margin: 8px 5px;
+            border-width: 4px;
+
+            cursor: pointer;
+
+        }
+
+        #wrap1 li.current {
+            background: #fff !important;
+        }
+
+        #red {
+            background: red;
+            border: 4px solid red;
+        }
+        #green {
+            background: green;
+            border: 1px solid green;
+        }
+        #black {
+            background: black;
+            border: 1px solid black;
+
+        }
+        #wrap2 {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #wrap2 li {
+            width: 80px;
+            line-height: 25px;
+            list-style: none;
+            display: block;
+            float: left;
+            text-align: center;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+    <script>
+        //window.onload = function() {
+        //    var oli = document.getElementById("wrap1").getElementsByTagName("li");
+        //    var olink = document.getElementsByTagName("link")[0];
+        //    for (var i = 0; i < oli.length; i++) {
+        //        oli[i].onclick = function () {
+        //            for (var j = 0; j < oli.length; j++) {
+        //                oli[j].className = "";
+        //            }
+
+        //            for (var p in oli) {
+        //                oli[p].className = "";
+        //            }
+
+        //            this.className = "current";
+
+
+        //            var id = this.id;
+        //            olink.setAttribute("href",id+".css");
+        //        }
+
+
+        //    }
+        //}
+
+      window.onload= function() {
+            var oli = document.getElementById("wrap1").getElementsByTagName("li");
+            var onlink = document.getElementsByTagName("link")[0];
+            for (var i = 0;i < oli.length;i++) {
+                oli[i].onclick= function() {
+                    for (var j=0;j<oli.length;j++) {
+                        oli[j].className = "";
+                        
+                    } this.className = "current";
+                    var id = this.id;
+                    onlink.setAttribute("href", id + ".css");
+                }
+            }
+        }
+       
+    </script>
+</head>
+<body>
+<div id="outer">
+    <div id="wrap1">
+        <ul>
+            <li id="red" class="current">红</li>
+            <li id="green">绿</li>
+            <li id="black">黑</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div id="wrap2">
+        <ul>
+            <li>新闻</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>电影</li>
+            <li>音乐</li>
+            <li>旅游</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

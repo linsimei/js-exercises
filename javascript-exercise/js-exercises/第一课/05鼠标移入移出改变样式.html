@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>(练习)鼠标移入/移出改变样式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #fff;
+        }
+
+        #box {
+            width: 150px;
+            height: 150px;
+            background: black;
+            margin: 10px auto;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            cursor: crosshair;
+            border: 10px solid #000;
+        }
+
+            #box.hover {
+                border: 10px solid red;
+                color: red;
+                background: #f0f0f0;
+            }
+    </style>
+    //
+    <script>
+        /* window.onload= function() {
+             var oBox = document.getElementById("box");
+             oBox.onmouseover = function () {
+                 oBox.className = "hover";
+             }
+             oBox.onmouseout = function () {
+                 oBox.className = "";
+             }
+         }*/
+
+
+        // </script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script>
+       /* $(document).ready(function () {
+            $("#box").mouseover(function () {
+                $("#box").addClass("hover");
+
+            });
+            $("#box").mouseout(function () {
+                $("#box").removeClass("hover");
+
+            });
+        })
+
+        $(function() {
+            $("#box").mouseover(function () {
+                $("#box").addClass("hover");
+
+            });
+            $("#box").mouseout(function () {
+                $("#box").removeClass("hover");
+
+            });
+        })*/
+        $(document)
+            .ready(function() {
+                $("#box")
+                    .mouseover(function(){
+                        $('#box').addClass("hover");
+            });
+           $("#box").mouseout(function() {
+               $("#box").removeClass("hover");
+           });
+        })
+
+    </script>
+</head>
+<body>
+    <div id="box">鼠标移入改变样式,移出恢复</div>
+</body>
+</html>

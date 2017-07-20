@@ -1,0 +1,105 @@
+﻿<!DOC html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>(练习)单一按钮隐藏和显示 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 220px;
+            border: 1px solid #c0c0c0;
+            margin: 10px auto;
+        }
+
+        #wrap h2 {
+            background: #a9a9a9;
+            cursor: pointer;
+            color: #57646E;
+            font-size: 14px;
+            font-weight: 400;
+            border: 1px solid;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            background: #ced3d7 url(../../../src/images/ico.gif) 180px 15px no-repeat;
+            border-color: #fff #e9edf2;
+        }
+
+        #wrap h2.open {
+            background-position: 200px -12px;
+        }
+
+        #wrap ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        #wrap li {
+            height: 25px;
+            line-height: 25px;
+            vertical-align: top;
+            color: #708090;
+        }
+
+        #wrap a {
+            display: block;
+            color: #6b7980;
+            background: #e9edf2;
+            padding: 0 8px;
+            text-decoration: none;
+        }
+
+        #wrap a:hover {
+            background: #fff;
+            text-decoration: underline;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function() {
+            var oH2 = document.getElementsByClassName("h2")[0];
+            var oUl = document.getElementsByClassName("ul")[0];
+            oH2.onclick = function() {
+                var style = oUl.style;
+                style.display = style.display == "none" ? "block" : "none";
+                oH2.className = style.display == "none" ? "open" : "";
+            }
+        }
+        /*for (var i = 0; i < oUl.length; i++)
+            oH2.onclick = function () {
+                oUl[i].style = "";
+            this.style = "hover";
+            oH2[i].style.display = "open";
+        }
+    }*/
+
+        window.onload = function() {
+            var oH2 = document.getElementsByTagName("h2")[0];
+            var oUl = document.getElementsByTagName("ul")[0];
+            oH2.onclick = function() {
+                var style = oUl.style;
+                style.display = style.display == "none" ? "block" : "none";
+                oH2.className = style.display == "none" ? "open" : "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h2 id="open">播放列表...</h2>
+        <ul>
+            <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+            <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+            <li><a href="javascript:;">猜不透 - 丁当</a></li>
+            <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+            <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+            <li><a href="javascript:;">流年 - 王菲</a></li>
+        </ul>
+    </div>
+</body>
+</html>

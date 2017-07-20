@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>控制div属性</title>
+    <style>
+        #outer {
+            width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        /*function changewidth() {
+            /*var mychar = document.getElementById("div1");
+            mychar.style.width = "500px"
+            document.getElementById("div1").style.width = "500px";
+        }
+        function changeheight() {
+            document.getElementById("div1").style.height = "500px";
+        }
+        function changecolor() {
+            document.getElementById("div1").style.backgroundColor = "red";
+        }
+        function changehide() {
+            document.getElementById("div1").style.display = "none";
+        }
+        function changeshow() {
+            document.getElementById("div1").style.display = "block";
+            document.getElementById("div1").style.backgroundColor = "black";
+        } */
+
+        function changeStyle(elem, attr, val) {
+            elem.style[attr] = val;
+        }
+        window.onload = function () {
+            var btns = document.getElementById("outer").getElementsByTagName("input");
+            var box = document.getElementById("div1");
+            var attrs = ['width', 'height', 'background', 'display', 'display'];
+            var vals = ['300px', '300px', 'red', 'none', 'block'];
+
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].index = i;
+                btns[i].onclick = function () {
+                    if (this.index == btns.length - 1) {
+                        box.style.cssText = "";
+                    }
+                    changeStyle(box, attrs[this.index], vals[this.index]);
+                }
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div id="outer">
+        <input type="button" id="btn1" value="变宽" />
+        <input type="button" id="btn2" value="变高" />
+        <input type="button" id="btn3" value="变色" />
+        <input type="button" id="btn4" value="隐藏" />
+        <input type="button" id="btn5" value="重置" />
+        <div id="div1"></div>
+    </div>
+</body>
+</html>

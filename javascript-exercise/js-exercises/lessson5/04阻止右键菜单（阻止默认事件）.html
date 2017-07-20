@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>（练习）阻止右键菜单（阻止默认事件）</title>  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        pre{
+            background: #f0f0f0;;
+            color:green;
+            border:1px dotted #333;
+            margin:10px;
+            padding:10px 15px;
+        font: 12px/1.5 Courier New;
+    }
+    
+    span {
+        color: #999;
+    }
+
+    </style>
+    <script>
+        window.oncontextmenu=function(){
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <pre>
+    &lt;script type="text/javascript"&gt;
+    <span> //※oncontextmenu</span>
+    window.oncontextmenu=function(){
+        return false;
+    }
+    &lt;script&gt;
+    </pre>
+
+</body>
+
+</html>

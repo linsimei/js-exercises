@@ -1,0 +1,53 @@
+body,div,p,dl.dt,dd{
+	margin:0;
+	padding:0;
+	}
+	label,
+    input,
+    a {
+        vertical-align: middle;
+    }
+    
+    label {
+        padding: 0 10px 0 5px;
+    }
+    
+    a {
+        color: #09f;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: red;
+    }
+	.container{
+		width:450px;
+		margin:50px auto;
+		
+		}
+		.container dl{
+			width:120px;
+			margin: 10px auto;
+    		padding: 10px 5px;
+    		border: 1px solid #666;
+   		    border-radius: 5px;
+			background: #fafafa;
+			}
+			
+		.container dl dt{
+		 padding-bottom: 10px;
+          border-bottom: 1px solid #666;
+			}
+		 dt label {
+        font-weight: 700;
+    }
+    
+    p {
+        margin-top: 10px;
+    }
+	.info{
+		margin:0 auto;
+		}		
+			
+			
+			
